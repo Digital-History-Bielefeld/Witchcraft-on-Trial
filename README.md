@@ -42,26 +42,26 @@ The workshop is structured as follows: There is a folder for each of the followi
 **Session 1: Introduction to Python programming**
 - Basics of Python syntax and structure
 - Variables, data types, and operators
-- Control structures (if statements, loops)
-- Lists and dictionaries
+- Lists, tuples, and dictionaries
 
 **Session 2: Working with Python Libraries and functions**
-- Introduction to Python libraries (e.g., pandas, numpy)
-- Functions
-- File handling (reading and writing files)
-- Basic data manipulation with pandas
+- Control structures (if statements, loops)
+- Working with files
+- Functions and modular programming
+- Libraries and packages 
 
 **Session 3: Techniques for text analysis**
 - Introduction to NLP and its applications in the humanities
 - Text preprocessing (tokenization, stemming, lemmatization)
-- Basic text analysis techniques (word frequency, n-grams)
-- SpaCy library for NLP tasks
+- Basic text analysis techniques (word frequency, n-grams, TF-IDF)
+- Named Entity Recognition (NER)
+- Working with spaCy, NLTK, and Gensim
 
 
 **Session 4: Data visualization techniques**
 - Importance of data visualization in historical research
 - Introduction to Matplotlib
-- Creating basic plots (line, bar, scatter)
+- Creating basic plots
 - displaCy for visualizing NLP results
 
 **Session 5: Practice with your own projects**
