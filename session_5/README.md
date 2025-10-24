@@ -43,3 +43,7 @@ pip install wordcloud
 2. Next, you can create a new Python file in the `session_5/` folder. You can name it `exercise.py` or any other name you prefer. To create a new file, you can click on the "New File" button in the file explorer of your codespace and enter the desired name.
 
 3. Now you can start writing your code in the new file. You can use the code snippets and functions from the previous exercises as a starting point. Make sure to import the necessary libraries at the beginning of your script. You can also copy and paste code from the previous exercises if you find it useful for your analysis. There is also a `helpers` folder, which contains all our functions from the previous sessions. You can just copy them into your new file and use them.
+
+---
+
+And now, have fun exploring your own data! 

@@ -23,20 +23,26 @@ This repository contains the materials and resources for the Digital Training co
 - Basic data analysis and interpretation for historical research
 
 ## Why programming for historians?
-Programming is a powerful tool for historians. It allows us to automate repetitive tasks, to work with large datasets, and to visualize our data in new ways. Programming can help us to ask new questions and to find new answers. It can also help us to communicate our research to a wider audience. In short:
-- **Automation**: Many tasks in the humanities are repetitive and can be automated. This saves time and allows you to focus on the essentials.
-- **Data analysis**: The amount of data in the humanities is constantly increasing. With programming, you can analyze and visualize this data.
-- **Text analysis**: With programming, you can analyze texts in a way that would be impossible by hand.
-- **Web scraping**: With programming, you can extract data from websites and use it for your own purposes.
-- **Visualization**: With programming, you can visualize data in a way that would be impossible by hand.
+Programming is not just for computer scientists – it is a way of thinking that helps historians work with digital sources more efficiently and creatively. It is important to note that programming is not meant to replace traditional historical methods, but rather to complement and enhance them. By learning to program, historians can gain new insights into their sources and develop new ways of asking questions about them.
+It allows you to automate repetitive tasks, explore large text collections, and visualize your findings in meaningful ways.
+
+In short:
+- **Automation**: Save time by letting your computer handle repetitive work (e.g. counting words, sorting data).
+- **Data analysis**: Work with large collections of sources that can’t be read manually.
+- **Text analysis**: Identify patterns, keywords, and structures in historical texts.
+- **Web scraping**: Collect historical materials from online archives and repositories.
+- **Visualization**: Present your findings in clear and engaging visual forms.
 
 ## Why Python?
 
-Python is a programming language that is easy to learn and read. It is widely used in the humanities (among many others) and has a large community. This makes it easy to find help and examples. Its syntax is easy to understand and understandable, as it is relatively close to natural language; and above all, Python is one of the most important languages for applications that could be of interest to historians, for example dealing with texts, data analysis, web-scraping and much more. With Python you have not just one tool in your toolbox, but a whole set of tools that you can use for your individual research.
+Python is one of the most accessible programming languages for beginners.
+It is widely used in the humanities and data analysis, and its clear, readable syntax makes it easy to learn.
+With Python, you can work on a wide range of tasks – from cleaning and analyzing texts to creating visualizations and automating workflows. In other words: Python gives you a whole toolkit for exploring historical data.
+
 
 ## Course structure
 
-The aim of the course is to provide you with basic knowledge of the Python programming language. The intention is to give you ideas on how you can continue working with digital methods and take away an initial fear of programming. You should take as much in-depth knowledge as possible that can also be followed up at home and, above all, to bring the advantages of programming for humanities tasks closer.
+The aim of the course is to provide you with **basic knowledge of the Python programming language**. The intention is to give you ideas on how you can continue working with digital methods and take away an initial fear of programming. You should take as much in-depth knowledge as possible that can also be followed up at home and, above all, to bring the advantages of programming for humanities tasks closer.
 The workshop is structured as follows: There is a folder for each of the following learning units, which contains the content of the session and is designed to be as interactive as possible. This content is then worked on together and deepened with short inputs. As you are currently in the middle of the first learning unit, let's get started right away!
 
 **Session 1: Introduction to Python programming**
@@ -90,7 +96,7 @@ To start, all participants must set up a codespace. We will be working with code
 
 Follow the instructions below to open your codespace and dive into a hassle-free and efficient development experience. Enjoy the workshop!
 
-1. Click on the code button at the top right
+1. Click on the `code` button at the top right
 2. There you have two tabs: "Local" and "Codespaces". Click on "Codespaces"
 3. Click on the Plus-Button to create a new codespace
 4. A new window opens in which you can see a Visual Studio Code environment. This is your codespace. You can now start working on the content of the first learning unit in folder "session-1".

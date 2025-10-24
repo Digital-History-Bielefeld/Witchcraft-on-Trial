@@ -7,9 +7,9 @@ In this session, we will learn the very basics of Python. If you understand thes
 - Lists, Tuples, and Dictionaries
 
 ## How to work with Python
-- **Python Interpreter**: You can run Python code in an interactive environment. You can start the Python interpreter by typing `python3` in your terminal. You can type Python code directly into the interpreter and it will execute it immediately. This is a great way to test small pieces of code.
+- **Python Interpreter**: You can run Python code in an interactive environment. You can start the Python interpreter by typing `python3` in your terminal. An interpreter is a special program that reads and executes code. You can type Python code directly into the interpreter and it will execute it immediately. This is a great way to test small pieces of code.
   - Try it out: Open your terminal and type `python3`. You should see the Python interpreter starting. Now you can type `print("Hello, World!")` and press enter. You should see the output `Hello, World!`.
-- **Python Script**: You can write Python code in a file and run it with the Python interpreter. You can create a new file with the extension `.py` and write your Python code in it. You can run the Python script by typing `python filename.py` in your terminal.
+- **Python Script**: You can write Python code in a file and run it with the Python interpreter. This is called a python script. You can create a new file with the extension `.py` and write your Python code in it. You can run the Python script by typing `python filename.py` in your terminal.
   - Try it out: Create a new file with the name `hello.py` and write the following code in it:
     ```python
     print("Hello, World!")
@@ -25,7 +25,7 @@ Before we start with the first Python program, we should clarify some basic term
 
 - **Expression**: An expression is a combination of values, variables, operators, and calls to functions. Expressions need to be evaluated. In the example above, `number_1 + number_2` is an expression.
 - **Value**: A value is one of the basic things a program works with. For example, the strings `"Hello, i am a Python program that adds two numbers."`, `"The first number is: "`, `"The second number is: "`, and `"The sum is: "` are all values.
-- **Variable**: A variable is a container for a value. It can be used to store data. In the example above, `number_1` and `number_2` are variables. Variables are written without quotes.
+- **Variable**: A variable is a container for a value. It can be used to store data. In the example above, `number_1` and `number_2` are variables. Variables are written without quotes. Variables are important because they allow you to store and reuse data instead of repeating yourself.
 - **Operator**: An operator is a special symbol that represents a simple computation like addition, multiplication, or string concatenation. In the example above, `+` is an operator.
 - **Data type**: A data type is a category for values, and every value belongs to exactly one data type. In the example above, the data type of `number_1` and `number_2` is an integer, the data type of the strings is a string.
 
@@ -177,6 +177,5 @@ if "name" in person.keys():
 
 if "python" in person.values():
   print("Yes, 'python' is one of the values in the person dictionary")
-
 
 ```
