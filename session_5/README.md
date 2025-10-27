@@ -15,7 +15,7 @@ You can install any missing libraries using pip.
 
 NLTK:
 ```bash
-pip install nltk
+pip install --user -U nltk
 ```
 
 spaCy:

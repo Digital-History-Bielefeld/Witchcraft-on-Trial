@@ -1,6 +1,7 @@
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import os
 
 nltk.download('punkt_tab')
 nltk.download('wordnet')
@@ -8,47 +9,50 @@ nltk.download('stopwords')
 
 lemmatizer = WordNetLemmatizer()
 
-def preprocess_text(text):
-    # Lowercase the text
-    text_lower = text.lower()
 
-    # Tokenize the text
-    tokens = nltk.word_tokenize(text_lower)
+def preprocess_text(raw_text):
+    text = raw_text.lower()
+    tokens_full = nltk.word_tokenize(text)
 
-    # Remove punctuation and non-alphabetic tokens
-    tokens = [token for token in tokens if token.isalpha()]
+    tokens= []
+    for token in tokens_full:
+        if token.isalpha():
+            tokens.append(token)
 
-    # Lemmatize the tokens
     lemmas = []
     for token in tokens:
         lemma = lemmatizer.lemmatize(token)
         lemmas.append(lemma)
 
-    # Custom stopwords
-    custom_stopwords = ['upon', 'thou', 'thy', 'thee'] # Add more as needed or leave the list blank, if you don't want any custom stopwords
+    custom_stopwords = ['upon', 'thou', 'thy', 'thee']
     stop_words = stopwords.words('english')
     stop_words.extend(custom_stopwords)
-    clean_tokens = []
-    for token in lemmas:
-        if token not in stop_words:
-            clean_tokens.append(token)
 
+    clean_tokens = []
+    for lemma in lemmas:
+        if lemma not in stop_words:
+            clean_tokens.append(lemma)
+    
     return clean_tokens
 
-# Open and read the first text file
-with open('../data/EAP_1.txt', 'r', encoding='utf-8') as file:
-    first_text = file.read()
 
-# Open and read the second text file
-with open('../data/EAP_2.txt', 'r', encoding='utf-8') as file:
-    second_text = file.read()
+folder_path = './session_3/data/'
+all_texts = []
+for filename in os.listdir(folder_path):
+  with open(os.path.join(folder_path, filename), 'r', encoding='utf-8') as file:
+      all_texts.append(file.read())
 
-texts = [first_text, second_text]
+our_text = all_texts[0]
+preprocessed_text = preprocess_text(our_text)
+#print(preprocessed_text)
 
-# Preprocess the texts
-for text in texts:
-    preprocessed_text = preprocess_text(text)
-    print("============")
-    print("Preprocessed Text:")
-    print(preprocessed_text)
+second_text = all_texts[1]
+preprocessed_second_text = preprocess_text(second_text)
+#print(preprocessed_second_text)
 
+for text in all_texts:
+    processed = preprocess_text(text)
+    print("----- New Document -----")
+    print(processed)
+    print("\n")
+    print("----- End Document -----")

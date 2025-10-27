@@ -1,7 +1,6 @@
 import spacy
 import os
 from collections import Counter
-from spacy.matcher import Matcher
 
 nlp = spacy.load("en_core_web_md")
 
@@ -28,39 +27,13 @@ def get_most_common_entities(text, entity_label="PERSON", top_n=10, merge_entity
     counts = Counter(entities)
     return counts.most_common(top_n)
 
-def get_entity_context(text, entity_names, top_n=10):
-    doc = nlp(text)
-    matcher = Matcher(nlp.vocab)
-    for name in entity_names:
-      matcher.add("NAME", [[{"LOWER": name.lower()}]])
-
-
-    matches = matcher(doc)
-    context_words = []
-    for match_id, start, end in matches:
-        span = doc[start:end].sent
-        for token in span:
-            if token.pos_ in ["NOUN", "VERB", "ADJ"]:
-                context_words.append(token.lemma_.lower())
-
-    return Counter(context_words).most_common(top_n)
 
 top_persons = get_most_common_entities(our_text)
-# print("Most common persons:", top_persons)
+#print("Most common persons:", top_persons)
 
 top_locations = get_most_common_entities(our_text, entity_label="GPE", top_n=3)
-# print("Most common locations:", top_locations)
+#print("Most common locations:", top_locations)
 
 merge_names = [["Augustus Bedloe", "Bedloe"], ["Warren Hastings", "Hastings"]]
 most_common_entities = get_most_common_entities(our_text, merge_entity_names=merge_names)
-# print(most_common_entities)
-
-context_templeton = get_entity_context(our_text, ["Templeton"])
-print("\nTop context words around 'Templeton':")
-for word, freq in context_templeton:
-    print(f"  {word}: {freq}")
-
-context_multiple = get_entity_context(our_text, ["Augustus Bedloe", "Bedloe"], top_n=10)
-print("\nTop context words around 'Augustus Bedloe' and 'Bedloe':")
-for word, freq in context_multiple:
-    print(f"  {word}: {freq}")
+print(most_common_entities)
