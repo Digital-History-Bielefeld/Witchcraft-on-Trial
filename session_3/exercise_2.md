@@ -205,12 +205,13 @@ Then we want to process the text with spaCy.
   doc = nlp(text)
   matcher = Matcher(nlp.vocab)
   for name in entity_names:
-    pattern = [{"LOWER": token.lower()} for token in name.split()]
-    matcher.add("NAME", [pattern])
+      name_tokens = name.split()
+      pattern = [{"LOWER": token.lower()} for token in name_tokens]
+      matcher.add("NAME", [pattern])
 ```
 This code will create a `Doc` object by passing the text to the `nlp` object. Then, it will create a `Matcher` object and add patterns for each entity name in the `entity_names` list. In detail, it works as follows:
 - The `Matcher` class is used to find sequences of tokens that match specific patterns in the text. We create a `Matcher` object by passing the vocabulary of the `nlp` object.
-- For each entity name in the `entity_names` list, we create a pattern that matches the lowercase version of the name. The pattern is a list of dictionaries, where each dictionary represents a token in the name. The `LOWER` key is used to match the lowercase version of the token. Or in very simple terms: We want to match the name regardless of whether it is written in uppercase or lowercase letters.
+- For each entity name in the `entity_names` list, we create a pattern that matches the lowercase version of the name. If the name consists of multiple words (like "John Smith"), we split it into individual tokens using the `split()` method.The pattern is a list of dictionaries, where each dictionary represents a token in the name. The `LOWER` key is used to match the lowercase version of the token. Or in very simple terms: We want to match the name regardless of whether it is written in uppercase or lowercase letters.
 - Finally, we add the pattern to the matcher with the label "NAME". Or in simple terms: We tell the matcher to look for the patterns we just created.
 
 Next, we will use the matcher to find the occurrences of the entity names in the text and extract the context words:
@@ -243,7 +244,9 @@ def get_entity_context(text, entity_names, top_n=10):
   doc = nlp(text)
   matcher = Matcher(nlp.vocab)
   for name in entity_names:
-    matcher.add("NAME", [[{"LOWER": name.lower()}]])
+      name_tokens = name.split()
+      pattern = [{"LOWER": token.lower()} for token in name_tokens]
+      matcher.add("NAME", [pattern])
 
 
   matches = matcher(doc)

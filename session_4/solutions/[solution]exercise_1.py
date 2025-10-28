@@ -34,7 +34,9 @@ def get_entity_context(text, entity_names, top_n=10):
     doc = nlp(text)
     matcher = Matcher(nlp.vocab)
     for name in entity_names:
-      matcher.add("NAME", [[{"LOWER": name.lower()}]])
+        name_tokens = name.split()
+        pattern = [{"LOWER": token.lower()} for token in name_tokens]
+        matcher.add("NAME", [pattern])
 
 
     matches = matcher(doc)
